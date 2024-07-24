@@ -2,13 +2,9 @@
 
 import { db } from "../lib/db";
 import { auth } from "@clerk/nextjs/server";
+import { Balance } from "../types";
 
-interface TransactionResult{
-  balance?: number;
-  error?: string;
-}
-
-async function getUserBalance():Promise<TransactionResult>{
+async function getUserBalance():Promise<Balance>{
  const { userId } = auth();
  
  if( !userId ){

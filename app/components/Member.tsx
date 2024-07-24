@@ -1,6 +1,8 @@
 import { currentUser } from "@clerk/nextjs/server";
 import AddTransaction from "./AddTransaction";
 import Balance from "./Balance";
+import IncomeExpense from "./IncomeExpense";
+import TransactionList from "./TransactionList";
 
 const Member = async () => {
     const user = await currentUser();
@@ -11,7 +13,9 @@ const Member = async () => {
                 Welcome, {user?.firstName} {user?.lastName}
             </h1>
             <Balance />
+            <IncomeExpense />
             <AddTransaction />
+            <TransactionList />
         </div>
     );
 };
